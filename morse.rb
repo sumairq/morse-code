@@ -1,4 +1,4 @@
-MORSE = {
+MY_ABC = {
     'a' => '.-',
     'b' => '-...',
     'c' => '-.-.',
@@ -25,34 +25,30 @@ MORSE = {
     'x' => '-..-',
     'y' => '-.--',
     'z' => '--..'
-  }
-
-
+  }.freeze
+  
   def decode_char(char)
-    MORSE.each { |key, value|
-        return key.upcase if value == char
-    }
-     end 
-
-     def decode_word(word)
-      new_word = ''
-      new_arr = word.split
-      new_arr.each {|value|
-      new_word += decode_char(value)
-      }
-      return new_word 
-  end 
-  
-  # Sentence method
-  
-  def decode_sentence(sentence)
-      new_sentence = ''
-      new_arr = sentence.split('   ')
-      new_arr.each {|value|
-      new_sentence += "#{decode_word(value)} "
-      }
-      return new_sentence
+    MY_ABC.each do |key, value|
+      return key.upcase if value == char
+    end
   end
   
-  puts decode_sentence('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+  def decode_word(word)
+    new_word = ''
+    new_arr = word.split
+    new_arr.each do |value|
+      new_word += decode_char(value)
+    end
+    new_word
+  end
   
+  def decode_sentence(text)
+    new_sentence = ''
+    new_arr = text.split('   ')
+    new_arr.each do |value|
+      new_sentence += "#{decode_word(value)} "
+    end
+    new_sentence
+  end
+  
+  decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
