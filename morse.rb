@@ -1,38 +1,38 @@
 MY_ABC = {
-    'a' => '.-',
-    'b' => '-...',
-    'c' => '-.-.',
-    'd' => '-..',
-    'e' => '.',
-    'f' => '..-.',
-    'g' => '--.',
-    'h' => '....',
-    'i' => '..',
-    'j' => '.---',
-    'k' => '-.-',
-    'l' => '.-..',
-    'm' => '--',
-    'n' => '-.',
-    'o' => '---',
-    'p' => '.--.',
-    'q' => '--.-',
-    'r' => '.-.',
-    's' => '...',
-    't' => '-',
-    'u' => '..-',
-    'v' => '...-',
-    'w' => '.--',
-    'x' => '-..-',
-    'y' => '-.--',
-    'z' => '--..'
-  }.freeze
-  
+  'a' => '.-',
+  'b' => '-...',
+  'c' => '-.-.',
+  'd' => '-..',
+  'e' => '.',
+  'f' => '..-.',
+  'g' => '--.',
+  'h' => '....',
+  'i' => '..',
+  'j' => '.---',
+  'k' => '-.-',
+  'l' => '.-..',
+  'm' => '--',
+  'n' => '-.',
+  'o' => '---',
+  'p' => '.--.',
+  'q' => '--.-',
+  'r' => '.-.',
+  's' => '...',
+  't' => '-',
+  'u' => '..-',
+  'v' => '...-',
+  'w' => '.--',
+  'x' => '-..-',
+  'y' => '-.--',
+  'z' => '--..'
+}.freeze
+
   def decode_char(char)
     MY_ABC.each do |key, value|
-      return key.upcase if value == char
+        return key.upcase if value == char
     end
-  end
-  
+end
+
   def decode_word(word)
     new_word = ''
     new_arr = word.split
@@ -40,8 +40,8 @@ MY_ABC = {
       new_word += decode_char(value)
     end
     new_word
-  end
-  
+end
+
   def decode_sentence(text)
     new_sentence = ''
     new_arr = text.split('   ')
@@ -49,6 +49,6 @@ MY_ABC = {
       new_sentence += "#{decode_word(value)} "
     end
     new_sentence
-  end
-  
+end
+
   decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
