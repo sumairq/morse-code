@@ -27,28 +27,28 @@ MY_ABC = {
   'z' => '--..'
 }.freeze
 
-  def decode_char(char)
-    MY_ABC.each do |key, value|
-        return key.upcase if value == char
-    end
+def decode_char(char)
+  MY_ABC.each do |key, value|
+    return key.upcase if value == char
+  end
 end
 
-  def decode_word(word)
-    new_word = ''
-    new_arr = word.split
-    new_arr.each do |value|
-      new_word += decode_char(value)
-    end
-    new_word
+def decode_word(word)
+  new_word = ''
+  new_arr = word.split
+  new_arr.each do |value|
+    new_word += decode_char(value)
+  end
+  new_word
 end
 
-  def decode_sentence(text)
-    new_sentence = ''
-    new_arr = text.split('   ')
-    new_arr.each do |value|
-      new_sentence += "#{decode_word(value)} "
-    end
-    new_sentence
+def decode_sentence(text)
+  new_sentence = ''
+  new_arr = text.split('   ')
+  new_arr.each do |value|
+    new_sentence += "#{decode_word(value)} "
+  end
+  new_sentence
 end
 
-  decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
