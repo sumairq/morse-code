@@ -1,4 +1,4 @@
-MY_ABC = {
+MORSE = {
   'a' => '.-',
   'b' => '-...',
   'c' => '-.-.',
@@ -28,7 +28,7 @@ MY_ABC = {
 }.freeze
 
 def decode_char(char)
-  MY_ABC.each do |key, value|
+  MORSE.each do |key, value|
     return key.upcase if value == char
   end
 end
