@@ -31,8 +31,8 @@ Clone the repository from this [link](https://github.com/sumairq/morse-code.git)
 
 👤 **Dennis Akagha**
 
-- GitHub: [@sumairq](https://github.com/denscholar)
-- Twitter: [@sumair_qaisar](https://twitter.com/dennisakagha)
+- GitHub: [@denscholar](https://github.com/denscholar)
+- Twitter: [@dennisakagha](https://twitter.com/dennisakagha)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/dennisakagha/)
 
 ## 🤝 Contributing
